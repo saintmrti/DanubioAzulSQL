@@ -67,7 +67,7 @@ id_cliente int not null,
 envio enum('SI', 'NO'),
 direccion varchar(20),
 telefono varchar(15),
-fecha_pedido date,
+fecha_pedido datetime,
 primary key(id_pedido),
 foreign key(id_cliente) references cliente(id_cliente)
 );
@@ -91,14 +91,15 @@ id_pedido int not null,
 id_producto int not null,
 cantidad int,
 costo decimal,
+fecha_pedido_producto datetime,
 primary key(id_pedido_producto),
 foreign key(id_pedido) references pedido(id_pedido),
 foreign key(id_producto) references producto(id_producto)
 );
 
--- drop table if exists pedido_producto;
+drop table if exists pedido_producto;
 -- drop table if exists cliente;
--- drop table if exists pedido;
+drop table if exists pedido;
 -- drop table if exists producto;
 
 
